@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Add Score{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Add Score</h2>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.id.label_tag }}
+            {{ form.id|add_class:"form-control" }}
+            {% if form.id.errors %}
+                <div class="invalid-feedback">
+                    {{ form.id.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.score.label_tag }}
+            {{ form.score|add_class:"form-control" }}
+            {% if form.score.errors %}
+                <div class="invalid-feedback">
+                    {{ form.score.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to the Game Theory Website!</h1>
+    <p class="lead">Explore the fascinating world of game theory and play interactive games like the Prisoner's Dilemma.</p>
+    <hr class="my-4">
+    <p>Sign up to start playing or log in if you already have an account.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button">Sign Up</a>
+    <a class="btn btn-secondary btn-lg" href="{% url 'login' %}" role="button">Login</a>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>About Game Theory</h2>
+        <p>Game theory is the study of mathematical models of strategic interaction among rational decision-makers. It has applications in various fields, including economics, political science, and psychology.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Prisoner's Dilemma</h2>
+        <p>The Prisoner's Dilemma is a standard example of a game analyzed in game theory that shows why two completely rational individuals might not cooperate, even if it appears that it is in their best interest to do so.</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get Started</h2>
+        <p>Ready to dive in? Sign up or log in to start playing and exploring different game theory scenarios.</p>
+    </div>
+</div>
+{% endblock %}
