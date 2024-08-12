@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Standings{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4">Standings</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Group ID</th>
+                <th scope="col">Player 1</th>
+                <th scope="col">Player 2</th>
+                <th scope="col">Player 3</th>
+                <th scope="col">Player 4</th>
+                <th scope="col">Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for group in groups %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ group.id }}</td>
+                <td>{{ group.player1 }}</td>
+                <td>{{ group.player2 }}</td>
+                <td>{{ group.player3 }}</td>
+                <td>{{ group.player4 }}</td>
+                <td>{{ group.score }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

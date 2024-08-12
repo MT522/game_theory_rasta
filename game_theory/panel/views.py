@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import AddScoreForm
 from .models import Group
+from django.contrib import messages
 
 # Create your views here.
 def homepage_view(request):
@@ -22,3 +23,7 @@ def addScore_view(request):
     else:
         form = AddScoreForm()
     return render(request, 'addscore.html', {'form': form})
+
+def standings_view(request):
+    groups = Group.objects.all().order_by('-score')
+    return render(request, 'standings.html', {'groups': groups})

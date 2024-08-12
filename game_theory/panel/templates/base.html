@@ -29,17 +29,20 @@
                     <li class="nav-item">
                         <a class="btn btn-link" href="{% url 'login' %}">Login</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="btn btn-link" href="{% url 'standings' %}">Standings</a>
+                    </li>
+                    {% if user.is_authenticated and user.is_staff %}
+                        <li class="nav-item">
+                            <a class="btn btn-warning" href="{% url 'addscore' %}">Add Score</a>
+                        </li>
+                    {% endif %}
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <form method="post" action="{% url 'logout' %}">
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-danger">Logout</button>
                             </form>
-                        </li>
-                    {% endif %}
-                    {% if user.is_authenticated and user.is_staff %}
-                        <li class="nav-item">
-                            <a class="btn btn-link" href="{% url 'login' %}">Login</a>
                         </li>
                     {% endif %}
                 </ul>
