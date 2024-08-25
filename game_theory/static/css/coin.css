@@ -11,6 +11,7 @@
 	 -webkit-filter: saturate(1.45) hue-rotate(2deg);
 }
  .coin {
+	cursor: pointer; 
 	 height: 160px;
 	 width: 160px;
 	 position: absolute;

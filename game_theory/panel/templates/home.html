@@ -11,6 +11,8 @@
     <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button">Sign Up</a>
     <a class="btn btn-secondary btn-lg" href="{% url 'login' %}" role="button">Login</a>
     <a class="btn btn-warning btn-lg" href="{% url 'standings' %}">Standings</a>
+    <a class="btn btn-lg" href="{% url 'theory' %}" style="background-color: rgb(0, 208, 0); color: white;">Theory</a>
+
 </div>
 
 <div class="row">
@@ -28,11 +30,10 @@
     </div>
 </div>
 
-
 <!-- The Coin -->
 {% load static %}
 <div class="purse">
-  <div class="coin">
+  <div class="coin" id="coin">
       <div class="front"></div>
     <div class="back"></div>
     <div class="side">
@@ -56,8 +57,23 @@
   </div>
 </div>
 
-
 <!-- Link to CSS -->
 <link rel="stylesheet" href="{% static 'css/coin.css' %}">
+
+<!-- JavaScript for coin click -->
+<script>
+document.getElementById('coin').addEventListener('click', function() {
+    var audio = new Audio('{% static "crs/coin.mp3" %}');
+    
+    audio.volume = 1.0;
+    
+    // Play the audio
+    audio.play();
+    
+    // Redirect immediately
+    window.location.href = 'https://app-sorteos.com/en/apps/flip-a-coin-online';
+});
+</script>
+
 
 {% endblock %}
