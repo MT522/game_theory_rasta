@@ -7,6 +7,9 @@ from django.contrib import messages
 def homepage_view(request):
     return render(request, 'home.html')
 
+def theory_view(request):
+    return render(request, 'theory.html')
+
 def addScore_view(request):
     if request.method == 'POST':
         form = AddScoreForm(request.POST)

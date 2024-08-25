@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="tree-container">
+    <div class="tree left-tree">
+        <ul>
+            <li>
+                <a href="#">نظریه بازی</a>
+                <ul>
+                    <li>
+                        <a href="#">نش ترکیبی</a>
+                        <ul class="vertical">
+                            <li><a href="#">Public goods</a></li>
+                            <li><a href="#">سفره خانه</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">نش خالص</a>
+                        <ul>
+                            <li>
+                                <a href="#">غیرجمعی</a>
+                                <ul class="vertical">
+                                    <li><a href="#">معمای زندانی</a></li>
+                                    <li><a href="#">دزد شریک قانع</a></li>
+                                    <li><a href="#">هزارپا</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">جمعی</a>
+                                <ul class="vertical">
+                                    <li><a href="#">2/3 میانگین</a></li>
+                                    <li><a href="#">مزایده قیمت دوم</a></li>
+                                    <li><a href="#">push the button</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tree right-tree">
+        <ul>
+            <li>
+                <a href="#">مفاهیم نظریه بازی</a>
+                <ul>
+                    <li>
+                        <a href="#">استراتژی برد</a>
+                        <a href="#">بهینه پاریتو</a>
+                    </li>
+                    <li>
+                        <a href="#">تعادل نش</a>
+                        <ul>
+                            <li>
+                                <a href="#">نش ترکیبی</a>
+                            </li>
+                            <li>
+                                <a href="#">نش خالص</a>
+                                <ul class="vertical">
+                                    <li><a href="#">فرم درختی backward induction</a></li>
+                                    <li><a href="#">فرم ماتریس</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/theory.css' %}">
+{% endblock %}
