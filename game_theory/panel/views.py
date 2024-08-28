@@ -5,6 +5,9 @@ from django.contrib import messages
 
 # Create your views here.
 def homepage_view(request):
+    #groups1 = Group.objects.all().filter(gender='F').order_by('-score')
+    #groups2 = Group.objects.all().filter(gender='M').order_by('-score')
+    #return render(request, 'standings.html', {'groups1': groups1, 'groups2': groups2})
     return render(request, 'home.html')
 
 def theory_view(request):
@@ -28,5 +31,8 @@ def addScore_view(request):
     return render(request, 'addscore.html', {'form': form})
 
 def standings_view(request):
+    #groups1 = Group.objects.all().filter(gender='F').order_by('-score')
+    #groups2 = Group.objects.all().filter(gender='M').order_by('-score')
     groups = Group.objects.all().order_by('-score')
+    #return render(request, 'standings.html', {'groups1': groups1, 'groups2': groups2})
     return render(request, 'standings.html', {'groups': groups})

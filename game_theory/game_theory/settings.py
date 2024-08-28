@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mu0#wkb*)#f#^m6o-hjud40rd_o%3mqljl_x6@il2yi&o@x+t7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['194.147.142.151', 'gt.rastaiha.ir', 'www.gt.rastaiha.ir']
 
 
 # Application definition
@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'game_theory.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'rasta',
+        'USER': 'admin',
+        'PASSWORD': 'adminGT1234',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
@@ -117,7 +121,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
+MEDIA_URL = 'media/'
+STATIC_ROOT = '/rasta/site/public/static'
+MEDIA_ROOT = '/rasta/site/public/media'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
