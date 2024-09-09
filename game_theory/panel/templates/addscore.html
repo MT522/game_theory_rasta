@@ -4,6 +4,7 @@
 {% load form_tags %}
 
 {% block content %}
+{% if user.is_staff %}
 <div class="container mt-5">
     <h2 class="mb-4">Add Score</h2>
     <form method="post" class="needs-validation" novalidate>
@@ -29,4 +30,9 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+{% else %}
+<div class="container mt-5">
+    <h2 class="mb-4">Access Denied!</h2>
+</div>
+{% endif %}
 {% endblock %}

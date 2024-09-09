@@ -7,6 +7,8 @@ def signup_view(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
+            #group_id = form.cleaned_data.get('group_id')
+            #group_instance = Group.objects.get('id=group_id')
             form.save()
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')

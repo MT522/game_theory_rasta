@@ -3,6 +3,7 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+{% if user.is_authenticated and user.is_staff %}
 <div class="jumbotron">
     <h1 class="display-4">Welcome to the Game Theory Website!</h1>
     <p class="lead">Explore the fascinating world of game theory and play interactive games like the Prisoner's Dilemma.</p>
@@ -31,4 +32,5 @@
         <p>Ready to dive in? Sign up or log in to start playing and exploring different game theory scenarios.</p>
     </div>
 </div>
+{% end if %}
 {% endblock %}

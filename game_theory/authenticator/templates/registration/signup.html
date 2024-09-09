@@ -44,6 +44,15 @@
                 </div>
             {% endif %}
         </div>
+        <div class="form-group">
+            {{ form.group_id.label_tag }}
+            {{ form.group_id|add_class:"form-control" }}
+            {% if form.group_id.errors %}
+                <div class="text-danger">
+                    {{ form.group_id.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
         <button type="submit" class="btn btn-primary">Sign Up</button>
     </form>
 </div>

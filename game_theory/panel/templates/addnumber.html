@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Submit Number{% endblock %}
+{% load form_tags %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="container mt-5">
+    <h2 class="mb-4">Add Score</h2>
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.id.label_tag }}
+            {{ form.id|add_class:"form-control" }}
+            {% if form.id.errors %}
+                <div class="text-danger">
+                    {{ form.id.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.number1.label_tag }}
+            {{ form.number1|add_class:"form-control" }}
+            {% if form.number1.errors %}
+                <div class="text-danger">
+                    {{ form.number1.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.number2.label_tag }}
+            {{ form.number2|add_class:"form-control" }}
+            {% if form.number2.errors %}
+                <div class="text-danger">
+                    {{ form.number2.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.number3.label_tag }}
+            {{ form.number3|add_class:"form-control" }}
+            {% if form.number3.errors %}
+                <div class="text-danger">
+                    {{ form.number3.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% else %}
+<div class="container mt-5">
+    <h2 class="mb-4">Access Denied!</h2>
+</div>
+{% endif %}
+{% endblock %}
