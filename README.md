@@ -29,30 +29,37 @@ Welcome to the official Django-based web platform for the **Rasta Game Theory** 
 ```bash
 git clone https://github.com/yourusername/rasta-game-theory.git
 cd rasta-game-theory
+```
 
 ### 2. Set up a virtual environment
 
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
 ### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
+```
 
 ### 4. Apply migrations
 
 ```bash
 python manage.py migrate
+```
 
 ### 5. Create a superuser (admin)
 
 ```bash
 python manage.py createsuperuser
+```
 
 ### 6. Run the development server
 
 ```bash
 python manage.py runserver
+```
 
 Now visit http://127.0.0.1:8000 to view the site.
